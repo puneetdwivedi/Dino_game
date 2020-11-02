@@ -1,0 +1,270 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.gamecontainer{
+    /* background-color: brown; */
+    width: 100vw;
+    height: 100vh;
+    background-image: url("images/backgronundgame.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.dino{
+    /* background-color: blue; */
+    width: 227px;
+    height: 139px;
+    background-image: url("images/mydino.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* border: 1px black solid; */
+    position: absolute;
+    left: 20%;
+    bottom: 14%;
+    transition: all 0.4s ease-in-out;
+}
+.dinogameover{
+    animation: dinogameover 1.5s linear;
+    transition: all ease-in-out;
+}
+.dragon{
+    /* background-color: blue; */
+    /* border: 1px black solid; */
+    width: 203px;
+    height: 168px;
+    background-image: url("images/flyingdragon.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 61%;
+    bottom: 14%;
+}
+.scoreboard{
+    width: 17%;
+    height: 4vh;
+    font-family: cursive;
+    font-size: larger;
+    font-weight: bold;
+    position: absolute;
+    top: 3%;
+    right: 0;
+}
+.gameabout{
+    width: 40%;
+    height: 5vh;
+    font-family: cursive;
+    font-size: x-large;
+    font-weight: bold;
+    position: absolute;
+    top: 2%;
+    left: 30%;
+}
+.animatie-dinoup{
+    animation: dinomoveup 0.7s linear;
+}
+.animation-obstacle{
+    animation: obstaclemotion linear infinite;
+    animation-duration: 3.9s;
+}
+
+@keyframes dinomoveup{
+    0%{
+        bottom: 14%;
+    }
+    50%{
+        bottom: 65%;
+    }
+    100%{
+        bottom: 14%;
+    }
+}
+@keyframes dinogameover{
+    25%{
+        bottom: 60%;
+        transform: rotate(180deg);
+    }
+    45%{
+        bottom: 0;
+        /* transform: rotate(130deg); */
+
+    }
+    70%{
+        bottom: 20vw;
+        /* transform: rotate(260deg); */
+
+    }
+    100%{
+        bottom: -20vw;
+        transform: rotate(360deg);
+
+    }
+}
+@keyframes obstaclemotion{
+    0%{
+        left: 110vw;
+    }
+    100%{
+        left: -20vw;
+    }
+}
+
+
+.gameovercontainer{
+    /* display: none; */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.gameovercontainer button{
+    width: 23%;
+    height: 7%;
+    border-radius: 46%;
+    background-color: brown;
+    color: antiquewhite;
+    font-family: monospace;
+    font-size: x-large;
+}
+.gameovercontainer button:focus{
+    outline: none;
+}
+.gameover{
+    background-color: brown;
+    color: antiquewhite;
+    font-family: monospace;
+    font-size: x-large;
+    margin-bottom: 2%;
+    padding: 1%;
+    border-radius: 7%;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+
+@media screen and (max-width: 1060px){
+    .scoreboard{
+        width: 19%;
+    }
+}
+
+@media screen and (max-width: 940px){
+    .scoreboard{
+        width: 19%;
+        font-size: inherit;
+    }
+    .gameabout{
+        font-size: large;
+    }
+    .gameover{
+        font-size: larger;
+    }
+    .gamecontainer button{
+        font-size: larger;
+    }
+    .dino{
+        width: 180px;
+        height: 110px;
+    }
+    .dragon{
+        width: 142px;
+        height: 120px;
+    }
+    body{
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 830px){
+    .gameabout{
+        top: 6%;
+        left: 9%;
+    }
+    .scoreboard{
+        top: 6%;
+    }
+    .scoreboard{
+        width:21%;
+    }
+    body{
+        overflow: hidden;
+    }
+
+    @keyframes dinomoveup{
+        0%{
+            bottom: 12%;
+        }
+        50%{
+            bottom: 50%;
+        }
+        100%{
+            bottom: 12%;
+        }
+    }
+
+}
+
+@media screen and (max-width: 750px){
+    .dino{
+        width: 138px;
+        height: 84px;
+    }
+    .dragon{
+        width: 105px;
+        height: 89px;
+    }
+    
+    @keyframes dinomoveup{
+        0%{
+            bottom: 10%;
+        }
+        50%{
+            bottom: 45%;
+        }
+        100%{
+            bottom: 10%;
+        }
+    }
+    .gameabout{
+        left: 30%;
+        width: 52%;
+    }
+    .scoreboard{
+        left: 40%;
+        top: 12%;
+        width: 23%;
+    }
+
+}
+@media screen and (max-width: 600px){
+    .dino{
+        width: 90px;
+        height: 54px;
+    }
+    .dragon{
+        width: 75px;
+        height: 64px;
+    }
+    .gameovercontainer button {
+        width: 33%;
+    }
+    .scoreboard{
+        font-size: small;;
+    }
+    .gameabout{
+        font-size: inherit;
+    }
+    
+
+}
